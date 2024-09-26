@@ -10,3 +10,4 @@ script = ExtResource("1_chcq8")
 polygon = PackedVector2Array(116, 313, 117, 510, 658, 509, 791, 340, 505, 344, 506, 438, 186, 435, 186, 312)
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_1qpk0")]
+visible = false

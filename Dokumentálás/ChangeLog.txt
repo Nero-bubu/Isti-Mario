@@ -1,0 +1,7 @@
+V0.1)
+	>ChangeLog Fájl létrehozva
+	>Global mappa és global.gd létrehozva (több scriptből elérhető változók)
+	>Főmenü és Pause Menu beállításai módosítva:
+		-Szinkronizálva lettek a gombok
+		-ResolutionLabel eltűntetve, a Resolution MenuButton mindig azt írja ki: "Felbontás"
+	>Új dokumentáló videó
