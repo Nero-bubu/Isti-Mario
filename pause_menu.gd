@@ -5,14 +5,12 @@ extends Control
 func _ready() -> void:
 	pass
 
-
-
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://menu.tscn")
 
 
 var original_text = ""
-@onready var resolution_dropdown = $PauseContainer/VBoxContainer/Resolution
+@onready var resolution_dropdown = $PauseContainer/MarginContainer/VBoxContainer/Resolution
 
 func _on_volume_value_changed(value: float) -> void: #Hangerő csúszka
 	AudioServer.set_bus_volume_db(0,value)

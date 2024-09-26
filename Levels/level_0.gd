@@ -6,7 +6,6 @@ func _ready() -> void:
 	pause_menu.hide()
 	
 var original_text = ""
-@onready var resolution_dropdown = $PauseContainer/VBoxContainer/Resolution
 @onready var pause_menu = $PauseMenu
 var paused = false
 func _process(delta: float) -> void:
