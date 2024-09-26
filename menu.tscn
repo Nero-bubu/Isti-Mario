@@ -1,0 +1,128 @@
+[gd_scene load_steps=4 format=3 uid="uid://iyuytxs28657"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_57rtf"]
+[ext_resource type="Texture2D" uid="uid://1lrrhrowal4s" path="res://Background/teszt_hatter.png" id="2_ki1no"]
+[ext_resource type="Texture2D" uid="uid://dv21vbbjg6dg1" path="res://Background/settings_background.jpg" id="3_m7j07"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57rtf")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ki1no")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 78.0
+offset_right = 602.0
+offset_bottom = 138.0
+theme_override_font_sizes/font_size = 34
+text = "Isti Mario"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuOptions" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -547.0
+offset_right = 104.0
+offset_bottom = -20.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="MenuOptions"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="MenuOptions"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
+text = "Beállítások"
+
+[node name="QuitButton" type="Button" parent="MenuOptions"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "Kilépés"
+
+[node name="SettingsContainer" type="MarginContainer" parent="."]
+offset_left = 126.0
+offset_top = 136.875
+offset_right = 252.0
+offset_bottom = 351.875
+
+[node name="TextureRect" type="TextureRect" parent="SettingsContainer"]
+layout_mode = 2
+texture = ExtResource("3_m7j07")
+expand_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hangerő"
+
+[node name="Volume" type="HSlider" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_top = NodePath("../Fullscreen")
+
+[node name="MuteLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Zene némítása"
+
+[node name="Mute" type="CheckBox" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_top = NodePath("../Volume")
+focus_neighbor_bottom = NodePath("../Resolution")
+
+[node name="ResolutionLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Felbontás:"
+
+[node name="Resolution" type="OptionButton" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+selected = 1
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "800x600"
+popup/item_2/id = 2
+
+[node name="FullscreenLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+text = "Teljes képernyő:"
+
+[node name="Fullscreen" type="CheckBox" parent="SettingsContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_bottom = NodePath("../Volume")
+
+[connection signal="pressed" from="MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuOptions/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuOptions/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="SettingsContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="SettingsContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="SettingsContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="SettingsContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]

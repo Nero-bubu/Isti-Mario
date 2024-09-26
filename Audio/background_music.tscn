@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv7wjgmo8188v"]
+
+[ext_resource type="AudioStream" uid="uid://bohiuf151o4j5" path="res://Audio/MC Isti - Szervkereskedelem (Official Music video 2017).mp3" id="1_vm7bp"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_vm7bp")
+volume_db = -80.0
+autoplay = true
+parameters/looping = true
