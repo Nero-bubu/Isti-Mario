@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://iyuytxs28657"]
+[gd_scene load_steps=5 format=3 uid="uid://iyuytxs28657"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_57rtf"]
 [ext_resource type="Texture2D" uid="uid://1lrrhrowal4s" path="res://Background/teszt_hatter.png" id="2_ki1no"]
 [ext_resource type="Texture2D" uid="uid://dv21vbbjg6dg1" path="res://Background/settings_background.jpg" id="3_m7j07"]
+[ext_resource type="PackedScene" uid="uid://cfh27bj0n6ns7" path="res://Pause/pause_menu.tscn" id="4_sgdvf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,6 +64,7 @@ focus_neighbor_bottom = NodePath("../StartButton")
 text = "Kilépés"
 
 [node name="SettingsContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 126.0
 offset_top = 136.875
 offset_right = 252.0
@@ -118,6 +120,9 @@ text = "Teljes képernyő:"
 layout_mode = 2
 focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
 focus_neighbor_bottom = NodePath("../Volume")
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_sgdvf")]
+layout_mode = 1
 
 [connection signal="pressed" from="MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuOptions/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -1,48 +1,18 @@
 extends Control
 
-@onready 
-var settings = $SettingsContainer
-var pressCount := 0
-var original_text = ""
-@onready var resolution_dropdown = $SettingsContainer/VBoxContainer/Resolution
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$MenuOptions/StartButton.grab_focus()
-	settings.hide()
-	pause_menu.hide()
-
-@onready var pause_menu = $PauseMenu
-var paused = false
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
-		pauseMenu()
-func pauseMenu(): #Pause menü
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-	paused = !paused
+	pass
 
 
-func _on_start_button_pressed() -> void: #Start gomb
-	get_tree().change_scene_to_file("res://Levels/Level0.tscn")
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu.tscn")
 
 
-func _on_settings_button_pressed() -> void: #Beállítások gomb
-	settings.show()
-	pressCount += 1
-	if pressCount == 2:
-		settings.hide()
-		pressCount = 0
-
-	
-func _on_quit_button_pressed() -> void: #Kilépés gomb
-	get_tree().quit()
-
+var original_text = ""
+@onready var resolution_dropdown = $PauseContainer/VBoxContainer/Resolution
 
 func _on_volume_value_changed(value: float) -> void: #Hangerő csúszka
 	AudioServer.set_bus_volume_db(0,value)

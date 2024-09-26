@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfh27bj0n6ns7"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_irn5n"]
+[ext_resource type="Texture2D" uid="uid://dv21vbbjg6dg1" path="res://Background/settings_background.jpg" id="1_rlbor"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_irn5n")
+
+[node name="PauseContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 136.875
+offset_right = 526.0
+offset_bottom = 351.875
+
+[node name="TextureRect" type="TextureRect" parent="PauseContainer"]
+layout_mode = 2
+texture = ExtResource("1_rlbor")
+expand_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hangerő"
+
+[node name="Volume" type="HSlider" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_top = NodePath("../Fullscreen")
+
+[node name="MuteLabel" type="Label" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Zene némítása"
+
+[node name="Mute" type="CheckBox" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_top = NodePath("../Volume")
+focus_neighbor_bottom = NodePath("../Resolution")
+
+[node name="ResolutionLabel" type="Label" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Felbontás:"
+
+[node name="Resolution" type="OptionButton" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+selected = 1
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "800x600"
+popup/item_2/id = 2
+
+[node name="FullscreenLabel" type="Label" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Teljes képernyő:"
+
+[node name="Fullscreen" type="CheckBox" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
+focus_neighbor_bottom = NodePath("../Volume")
+
+[node name="Menu" type="Button" parent="PauseContainer/VBoxContainer"]
+layout_mode = 2
+text = "Főmenü"
+
+[connection signal="value_changed" from="PauseContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="PauseContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="PauseContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="PauseContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="PauseContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

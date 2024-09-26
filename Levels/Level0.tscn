@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhjii35yg6i0f"]
+[gd_scene load_steps=3 format=3 uid="uid://dhjii35yg6i0f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_chcq8"]
+[ext_resource type="PackedScene" uid="uid://cfh27bj0n6ns7" path="res://Pause/pause_menu.tscn" id="2_1qpk0"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_chcq8")
@@ -8,11 +9,4 @@ script = ExtResource("1_chcq8")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(116, 313, 117, 510, 658, 509, 791, 340, 505, 344, 506, 438, 186, 435, 186, 312)
 
-[node name="Button" type="Button" parent="."]
-offset_left = 116.0
-offset_top = 100.0
-offset_right = 197.0
-offset_bottom = 131.0
-text = "MENÜ"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="PauseMenu" parent="." instance=ExtResource("2_1qpk0")]
