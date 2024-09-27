@@ -1,3 +1,13 @@
+V0.2)
+	>LevelSelection létrehozva (pályaválasztó menü)
+		-Képernyő négy kis négyzetre osztva, pályák hátterei (egyelőre teszt imagek)
+		-Teszt imagek a Backgrond mappában
+		-4 pályához gombok
+		-Főmenü gomb ("escape" gomb hozzárendelve)
+		-Gombok saját dizájnja
+	>Főmenü gombok dizájnja (azonos stílus a pályaválasztó gombjaival)
+	>Fölösleges Settings mappa és Settings.tscn törölve
+
 V0.1.1)
 	>ResolutionLabel vissza lett helyezve
 	>Resolution MenuButton-ök javítva lettek, mostmár mindig az aktuális felbontást írja ki (kivéve fullscreen módban)

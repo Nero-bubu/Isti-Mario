@@ -25,7 +25,7 @@ func _update_ui_from_globals() -> void:
 	$SettingsContainer/VBoxContainer/Resolution.selected = Global.resolution_index
 
 func _on_start_button_pressed() -> void: # Start gomb
-	get_tree().change_scene_to_file("res://Levels/Level0.tscn")
+	get_tree().change_scene_to_file("res://Levels/LevelSelection.tscn")
 
 func _on_settings_button_pressed() -> void: # Beállítások gomb
 	settings.show()

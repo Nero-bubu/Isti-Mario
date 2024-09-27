@@ -1,0 +1,514 @@
+[gd_scene load_steps=15 format=3 uid="uid://byfyqghktnie4"]
+
+[ext_resource type="Texture2D" uid="uid://dqpmj46h01asv" path="res://Background/LevelSelection1.jpg" id="1_gd0nn"]
+[ext_resource type="Script" path="res://Levels/level_selection.gd" id="1_on538"]
+[ext_resource type="StyleBox" uid="uid://mpw4rykcgco2" path="res://Levels/StyleWhite.tres" id="2_uftxb"]
+[ext_resource type="StyleBox" uid="uid://dgckbf5bx8f8l" path="res://Levels/StyleBlack.tres" id="3_agdt0"]
+[ext_resource type="Texture2D" uid="uid://3c3mu7pdi4ay" path="res://Background/LevelSelection2.jpg" id="4_g4q0j"]
+[ext_resource type="Texture2D" uid="uid://cnb415d1nxk48" path="res://Background/LevelSelection3.jpg" id="5_ujg84"]
+[ext_resource type="Texture2D" uid="uid://66cr5ll345e6" path="res://Background/LevelSelection4.jpg" id="6_tk7nd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syoee"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+skew = Vector2(-0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 70.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdb52"]
+bg_color = Color(0.0687981, 0.0687983, 0.0687983, 0.662745)
+skew = Vector2(-0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tcry"]
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+skew = Vector2(-0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 40.0
+expand_margin_right = 10.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1462f"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+skew = Vector2(-0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 70.0
+expand_margin_right = 10.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dxxn"]
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+skew = Vector2(0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 40.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhxto"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+skew = Vector2(0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 70.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsppk"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+skew = Vector2(0.53, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0705882, 0.0705882, 0.0705882, 0.662745)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 35.0
+expand_margin_right = 15.0
+expand_margin_bottom = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_on538")
+
+[node name="FirstLevel" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="TextureRect" type="TextureRect" parent="FirstLevel"]
+layout_mode = 2
+texture = ExtResource("1_gd0nn")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="FirstLevel"]
+layout_mode = 2
+color = Color(0.466181, 0.466181, 0.466181, 0.635294)
+
+[node name="MarginContainer" type="MarginContainer" parent="FirstLevel"]
+layout_mode = 2
+theme_override_constants/margin_top = -255
+theme_override_constants/margin_right = 425
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FirstLevel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="FirstLevelLaber" type="Label" parent="FirstLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_uftxb")
+text = "1. pálya"
+
+[node name="MarginContainer" type="MarginContainer" parent="FirstLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -25
+theme_override_constants/margin_right = 25
+
+[node name="FirstLevelButton" type="Button" parent="FirstLevel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.533333, 0.533333, 0.533333, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("3_agdt0")
+theme_override_styles/disabled_mirrored = ExtResource("3_agdt0")
+theme_override_styles/disabled = ExtResource("3_agdt0")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_agdt0")
+theme_override_styles/hover_pressed = ExtResource("3_agdt0")
+theme_override_styles/hover_mirrored = ExtResource("3_agdt0")
+theme_override_styles/hover = ExtResource("3_agdt0")
+theme_override_styles/pressed_mirrored = ExtResource("3_agdt0")
+theme_override_styles/pressed = ExtResource("3_agdt0")
+theme_override_styles/normal_mirrored = ExtResource("3_agdt0")
+theme_override_styles/normal = ExtResource("3_agdt0")
+text = "Play"
+
+[node name="SecondLevel" type="MarginContainer" parent="."]
+offset_left = 640.0
+offset_right = 1280.0
+offset_bottom = 360.0
+
+[node name="TextureRect" type="TextureRect" parent="SecondLevel"]
+layout_mode = 2
+texture = ExtResource("4_g4q0j")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="SecondLevel"]
+layout_mode = 2
+color = Color(0.466181, 0.466181, 0.466181, 0.635294)
+
+[node name="MarginContainer" type="MarginContainer" parent="SecondLevel"]
+layout_mode = 2
+theme_override_constants/margin_top = -255
+theme_override_constants/margin_right = -425
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SecondLevel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="SecondLevelLaber" type="Label" parent="SecondLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_syoee")
+text = "2. pálya"
+
+[node name="MarginContainer" type="MarginContainer" parent="SecondLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = -25
+
+[node name="SecondLevelButton" type="Button" parent="SecondLevel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.533037, 0.533037, 0.533037, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vdb52")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdb52")
+text = "Play"
+
+[node name="ThirdLevel" type="MarginContainer" parent="."]
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 720.0
+
+[node name="TextureRect" type="TextureRect" parent="ThirdLevel"]
+layout_mode = 2
+texture = ExtResource("6_tk7nd")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="ThirdLevel"]
+layout_mode = 2
+color = Color(0.466181, 0.466181, 0.466181, 0.635294)
+
+[node name="MarginContainer" type="MarginContainer" parent="ThirdLevel"]
+layout_mode = 2
+theme_override_constants/margin_top = 255
+theme_override_constants/margin_right = 475
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ThirdLevel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="ThirdLevelLaber" type="Label" parent="ThirdLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0tcry")
+text = "3. pálya"
+
+[node name="MarginContainer" type="MarginContainer" parent="ThirdLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = -25
+
+[node name="ThirdLevelButton" type="Button" parent="ThirdLevel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_1462f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1462f")
+text = "Play"
+
+[node name="FourthLevel" type="MarginContainer" parent="."]
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TextureRect" type="TextureRect" parent="FourthLevel"]
+layout_mode = 2
+texture = ExtResource("5_ujg84")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="FourthLevel"]
+layout_mode = 2
+color = Color(0.466181, 0.466181, 0.466181, 0.635294)
+
+[node name="MarginContainer" type="MarginContainer" parent="FourthLevel"]
+layout_mode = 2
+theme_override_constants/margin_top = 255
+theme_override_constants/margin_right = -475
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FourthLevel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="FourthLevelLaber" type="Label" parent="FourthLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_4dxxn")
+text = "4. pálya"
+
+[node name="MarginContainer" type="MarginContainer" parent="FourthLevel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -25
+theme_override_constants/margin_right = 25
+
+[node name="FourthLevelButton" type="Button" parent="FourthLevel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.286275, 0.286275, 0.286275, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_nhxto")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nhxto")
+text = "Play"
+
+[node name="MenuContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -179.5
+offset_right = 573.0
+offset_bottom = 179.5
+grow_vertical = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 455
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="MenuLabel" type="Label" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0tcry")
+text = "Menü"
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_right = 5
+
+[node name="MenuButton" type="Button" parent="MenuContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.28485, 0.28485, 0.28485, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qsppk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qsppk")
+text = "Vissza"
+
+[node name="VertivalLineCenter" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 637.0
+offset_right = 643.0
+offset_bottom = 720.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="VerticalLineLeft" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 4.0
+offset_bottom = 616.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="VerticalLineRight" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1276.0
+offset_top = 104.0
+offset_right = 1280.0
+offset_bottom = 615.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="HorizontalLineCenter" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 357.0
+offset_right = 1276.0
+offset_bottom = 363.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="HorizontalLineTop" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_right = 1090.0
+offset_bottom = 4.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="HorizontalLineBottom" type="ColorRect" parent="."]
+offset_left = 190.0
+offset_top = 716.0
+offset_right = 1090.0
+offset_bottom = 720.0
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="BottomLeftLine" type="ColorRect" parent="."]
+offset_left = 165.0
+offset_top = 664.5
+offset_right = 224.0
+offset_bottom = 667.5
+rotation = 1.07163
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="TopRightLine" type="ColorRect" parent="."]
+offset_left = 1090.0
+offset_top = 2.5
+offset_right = 1149.0
+offset_bottom = 5.5
+rotation = 1.07163
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="BottomRightLine" type="ColorRect" parent="."]
+offset_left = 1087.0
+offset_top = 716.0
+offset_right = 1146.0
+offset_bottom = 719.0
+rotation = -1.07163
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[node name="TopLeftLine" type="ColorRect" parent="."]
+offset_left = 162.0
+offset_top = 54.5
+offset_right = 221.0
+offset_bottom = 57.5
+rotation = -1.07163
+color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+
+[connection signal="pressed" from="FirstLevel/MarginContainer/VBoxContainer/MarginContainer/FirstLevelButton" to="." method="_on_first_level_button_pressed"]
+[connection signal="pressed" from="SecondLevel/MarginContainer/VBoxContainer/MarginContainer/SecondLevelButton" to="." method="_on_second_level_button_pressed"]
+[connection signal="pressed" from="ThirdLevel/MarginContainer/VBoxContainer/MarginContainer/ThirdLevelButton" to="." method="_on_third_level_button_pressed"]
+[connection signal="pressed" from="FourthLevel/MarginContainer/VBoxContainer/MarginContainer/FourthLevelButton" to="." method="_on_fourth_level_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/MarginContainer/MenuButton" to="." method="_on_menu_button_pressed"]
