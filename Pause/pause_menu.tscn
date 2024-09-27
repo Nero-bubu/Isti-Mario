@@ -67,6 +67,10 @@ focus_neighbor_bottom = NodePath("../Resolution")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ntc7r")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ntc7r")
 
+[node name="ResolutionLabel" type="Label" parent="PauseContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Felbontás:"
+
 [node name="Resolution" type="OptionButton" parent="PauseContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 selected = 1

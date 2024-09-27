@@ -1,3 +1,10 @@
+V0.1.1)
+	>ResolutionLabel vissza lett helyezve
+	>Resolution MenuButton-ök javítva lettek, mostmár mindig az aktuális felbontást írja ki (kivéve fullscreen módban)
+	>Resolution MenuButton-ök szinkronizálva lettek
+	>Git mappa és Token törölve a fájlok közül (GitHubnak nem tetszett)
+	>Fölösleges teszt háttér törölve a fájlok közül
+
 V0.1)
 	>ChangeLog Fájl létrehozva
 	>Global mappa és global.gd létrehozva (több scriptből elérhető változók)
