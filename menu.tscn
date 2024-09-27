@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iyuytxs28657"]
+[gd_scene load_steps=11 format=3 uid="uid://iyuytxs28657"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_57rtf"]
 [ext_resource type="Texture2D" uid="uid://1lrrhrowal4s" path="res://Background/teszt_hatter.png" id="2_ki1no"]
@@ -33,7 +33,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_left = 40.0
-expand_margin_right = 30.0
+expand_margin_right = 40.0
 expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erkbg"]
@@ -49,8 +49,17 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_left = 40.0
-expand_margin_right = 50.0
+expand_margin_right = 70.0
 expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7f5b"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 0.552941)
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.87451, 0.87451, 0.87451, 0.662745)
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4grt5"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 1)
@@ -118,14 +127,14 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 11.0
 offset_top = -547.0
-offset_right = 104.0
+offset_right = 106.0
 offset_bottom = -20.0
 grow_vertical = 0
 
 [node name="StartButton" type="Button" parent="MenuOptions"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_ifeoa")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ifeoa")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ifeoa")
@@ -141,7 +150,7 @@ text = "Start"
 
 [node name="SettingsButton" type="Button" parent="MenuOptions"]
 layout_mode = 2
-focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_1wicc")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_1wicc")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1wicc")
@@ -157,8 +166,8 @@ text = "Beállítások"
 
 [node name="QuitButton" type="Button" parent="MenuOptions"]
 layout_mode = 2
-focus_neighbor_right = NodePath("../../SettingsContainer/VBoxContainer/Mute")
 focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_erkbg")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_erkbg")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_erkbg")
@@ -172,50 +181,55 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_erkbg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erkbg")
 text = "Kilépés"
 
-[node name="SettingsContainer" type="MarginContainer" parent="."]
+[node name="SettingsPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 190.665
-offset_top = 136.875
-offset_right = 316.665
-offset_bottom = 351.875
+offset_top = 342.0
+offset_right = 264.0
+offset_bottom = 609.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7f5b")
 
-[node name="ColorRect" type="ColorRect" parent="SettingsContainer"]
+[node name="SettingsContainer" type="MarginContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 12.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/SettingsContainer"]
 layout_mode = 2
-color = Color(0.0980392, 0.0980392, 0.0980392, 0.643137)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer"]
-layout_mode = 2
-
-[node name="VolumeLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+[node name="VolumeLabel" type="Label" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 text = "Hangerő"
 
-[node name="Volume" type="HSlider" parent="SettingsContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
-focus_neighbor_top = NodePath("../Fullscreen")
+focus_neighbor_top = NodePath("../../../../MenuOptions/QuitButton")
 
-[node name="MuteLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+[node name="MuteLabel" type="Label" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 text = "Zene némítása"
 
-[node name="Mute" type="CheckBox" parent="SettingsContainer/VBoxContainer"]
+[node name="Mute" type="CheckBox" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
 focus_neighbor_top = NodePath("../Volume")
 focus_neighbor_bottom = NodePath("../Resolution")
 theme_override_styles/hover = ExtResource("3_4ohfx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4grt5")
 
-[node name="ResolutionLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+[node name="ResolutionLabel" type="Label" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 text = "Felbontás:"
 
-[node name="Resolution" type="OptionButton" parent="SettingsContainer/VBoxContainer"]
+[node name="Resolution" type="OptionButton" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
 theme_override_styles/focus = SubResource("StyleBoxFlat_e6af7")
 selected = 1
 item_count = 3
@@ -225,23 +239,22 @@ popup/item_1/id = 1
 popup/item_2/text = "800x600"
 popup/item_2/id = 2
 
-[node name="FullscreenLabel" type="Label" parent="SettingsContainer/VBoxContainer"]
+[node name="FullscreenLabel" type="Label" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 text = "Teljes képernyő:"
 
-[node name="Fullscreen" type="CheckBox" parent="SettingsContainer/VBoxContainer"]
+[node name="Fullscreen" type="CheckBox" parent="SettingsPanel/SettingsContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../../../MenuOptions/SettingsButton")
-focus_neighbor_bottom = NodePath("../Volume")
+focus_neighbor_bottom = NodePath("../../../../MenuOptions/StartButton")
 theme_override_styles/hover = ExtResource("3_4ohfx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jn2b6")
 
 [connection signal="pressed" from="MenuOptions/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuOptions/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MenuOptions/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="value_changed" from="SettingsContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="SettingsContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
-[connection signal="item_selected" from="SettingsContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
-[connection signal="toggled" from="SettingsContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="SettingsPanel/SettingsContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="SettingsPanel/SettingsContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="SettingsPanel/SettingsContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="SettingsPanel/SettingsContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
