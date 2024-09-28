@@ -1,3 +1,7 @@
+V0.3.2)
+	>Double jump javítva
+	>CharacterBody Spriteja mostmár több frameből áll (mozgásanimáció)
+
 V0.3.1)
 	>Javítva, hogy a PauseMenu nem jelent meg
 	>Double jump megcsinálva 
