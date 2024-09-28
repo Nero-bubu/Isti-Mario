@@ -1,3 +1,7 @@
+V0.3.1)
+	>Javítva, hogy a PauseMenu nem jelent meg
+	>Double jump megcsinálva 
+
 V0.3)
 	>CharacterBody scene és character.gd hozzáadva (kezdetleges karakter)
 	>Level0 átalakítva
