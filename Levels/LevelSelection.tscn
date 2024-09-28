@@ -185,6 +185,7 @@ theme_override_styles/normal = ExtResource("3_agdt0")
 text = "Play"
 
 [node name="SecondLevel" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 640.0
 offset_right = 1280.0
 offset_bottom = 360.0
@@ -240,6 +241,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vdb52")
 text = "Play"
 
 [node name="ThirdLevel" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_top = 360.0
 offset_right = 640.0
 offset_bottom = 720.0
@@ -306,6 +308,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1462f")
 text = "Play"
 
 [node name="FourthLevel" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 360.0
 offset_right = 1280.0
@@ -484,6 +487,7 @@ offset_bottom = 4.0
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="HorizontalLineBottom" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 716.0
 offset_right = 1090.0
@@ -491,6 +495,7 @@ offset_bottom = 720.0
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="BottomLeftLine" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 165.0
 offset_top = 664.5
 offset_right = 224.0
@@ -499,6 +504,7 @@ rotation = 1.07163
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="TopRightLine" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 1090.0
 offset_top = 2.5
 offset_right = 1149.0
@@ -507,6 +513,7 @@ rotation = 1.07163
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="BottomRightLine" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 1087.0
 offset_top = 716.0
 offset_right = 1146.0
@@ -515,6 +522,7 @@ rotation = -1.07163
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="TopLeftLine" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 162.0
 offset_top = 54.5
 offset_right = 221.0
@@ -523,6 +531,7 @@ rotation = -1.07163
 color = Color(0.87451, 0.87451, 0.87451, 0.662745)
 
 [node name="TopLeftLine2" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 102.0
 offset_top = 414.0
 offset_right = 162.0

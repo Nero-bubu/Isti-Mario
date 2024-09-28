@@ -1,3 +1,10 @@
+V0.3)
+	>CharacterBody scene és character.gd hozzáadva (kezdetleges karakter)
+	>Level0 átalakítva
+		-Kezdetleges pályaelemek
+		-Játékoskövető kamera
+		-PauseMenu folyton a képrnyő közepén jelenik meg
+
 V0.2.2)
 	>PauseMenu javítva (mostmár teljes képernyőt lefedi)
 	>Főmenü beállítások új dizájnja

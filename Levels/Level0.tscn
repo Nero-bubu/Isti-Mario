@@ -1,13 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhjii35yg6i0f"]
+[gd_scene load_steps=6 format=3 uid="uid://dhjii35yg6i0f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_chcq8"]
 [ext_resource type="PackedScene" uid="uid://cfh27bj0n6ns7" path="res://Pause/pause_menu.tscn" id="2_1qpk0"]
+[ext_resource type="PackedScene" uid="uid://cex340c8fi6ji" path="res://Character/character_body.tscn" id="3_e8ra2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxa1y"]
+size = Vector2(581.5, 30.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emptd"]
+size = Vector2(1, 720)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_chcq8")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(116, 313, 117, 510, 658, 509, 791, 340, 505, 344, 506, 438, 186, 435, 186, 312)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(612, 563)
+shape = SubResource("RectangleShape2D_fxa1y")
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_1qpk0")]
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -15.0
+offset_right = 291.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1504, 563)
+shape = SubResource("RectangleShape2D_fxa1y")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -15.0
+offset_right = 291.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_e8ra2")]
+position = Vector2(0, 4)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(640, 360)
+limit_left = 0
+limit_bottom = 720
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 360)
+shape = SubResource("RectangleShape2D_emptd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_1qpk0")]
