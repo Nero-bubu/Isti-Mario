@@ -1,29 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhjii35yg6i0f"]
+[gd_scene load_steps=10 format=3 uid="uid://dhjii35yg6i0f"]
 
 [ext_resource type="Script" path="res://Levels/level_0.gd" id="1_chcq8"]
 [ext_resource type="PackedScene" uid="uid://cfh27bj0n6ns7" path="res://Pause/pause_menu.tscn" id="2_1qpk0"]
 [ext_resource type="PackedScene" uid="uid://cex340c8fi6ji" path="res://Character/character_body.tscn" id="3_e8ra2"]
+[ext_resource type="Texture2D" uid="uid://bvl3ird8547ho" path="res://Icons/Dash_avalible_1.png" id="4_8sq4n"]
+[ext_resource type="Texture2D" uid="uid://dnongy1adpcjf" path="res://Icons/Dash_unavalible_1.png" id="5_oejs4"]
+[ext_resource type="Texture2D" uid="uid://cnf1ngmpa5p3s" path="res://Icons/Hp_icon.png" id="6_5gkkk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxa1y"]
 size = Vector2(581.5, 30.125)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lff5m"]
+size = Vector2(581.5, 30.125)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emptd"]
-size = Vector2(1, 720)
+size = Vector2(1, 993)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_chcq8")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_e8ra2")]
-position = Vector2(-66, 70)
+position = Vector2(535, 96)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(640, 360)
+position = Vector2(0, 360)
 limit_left = 0
-limit_top = 0
 limit_bottom = 720
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(612, 563)
+position = Vector2(292, 576)
 shape = SubResource("RectangleShape2D_fxa1y")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
@@ -38,8 +43,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(1504, 563)
-shape = SubResource("RectangleShape2D_fxa1y")
+position = Vector2(1232, 338)
+shape = SubResource("RectangleShape2D_lff5m")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D3"]
 anchors_preset = 15
@@ -53,10 +58,41 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 360)
+position = Vector2(0.5, 223.5)
 shape = SubResource("RectangleShape2D_emptd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_1qpk0")]
 visible = false
+
+[node name="Hud" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 286.0
+offset_bottom = 65.0
+
+[node name="Dash_Avalible" type="Sprite2D" parent="CanvasLayer/Hud"]
+position = Vector2(27, 29)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_8sq4n")
+
+[node name="Dash_Unavalible" type="Sprite2D" parent="CanvasLayer/Hud"]
+position = Vector2(27, 29)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_oejs4")
+
+[node name="Hp_2" type="Sprite2D" parent="CanvasLayer/Hud"]
+position = Vector2(244, 29)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_5gkkk")
+
+[node name="Hp_1" type="Sprite2D" parent="CanvasLayer/Hud"]
+position = Vector2(173, 29)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_5gkkk")
+
+[node name="Hp_0" type="Sprite2D" parent="CanvasLayer/Hud"]
+position = Vector2(100, 29)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_5gkkk")

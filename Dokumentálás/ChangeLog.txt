@@ -1,3 +1,11 @@
+V0.4)
+	>Hud létrehozva
+	>Dash mechanika
+	>Dash elérhetőségét jelző ikonok
+	>Sprint mechanica (stamina mechanika tervben van)
+	>Életet jelző ikonok (leeséssel fogynak)
+	>Projekt mappájában futtatható prototípus bekerült (V0.4.exe)
+
 V0.3.2)
 	>Double jump javítva
 	>CharacterBody Spriteja mostmár több frameből áll (mozgásanimáció)
@@ -11,7 +19,7 @@ V0.3)
 	>Level0 átalakítva
 		-Kezdetleges pályaelemek
 		-Játékoskövető kamera
-		-PauseMenu folyton a képrnyő közepén jelenik meg
+		-PauseMenu folyton a képernyő közepén jelenik meg
 
 V0.2.2)
 	>PauseMenu javítva (mostmár teljes képernyőt lefedi)

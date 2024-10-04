@@ -1,0 +1,10 @@
+res://Audio/background_music.tscn::bad82e6e37678114ac23ca9e39768cd3::1727532981::res://.godot/exported/133200997/export-bd4756b891e864910d2acf45a0253e7a-background_music.scn
+res://Character/character_body.tscn::1b001d3356f9e2a26c374d99117b4311::1728064297::res://.godot/exported/133200997/export-5a9dfbc4e0b80b0d5bf7063aa25abd1a-character_body.scn
+res://Levels/Level0.tscn::744f42ac36c2d5ee6e94d14cf0c6d85b::1728064800::res://.godot/exported/133200997/export-5a3e48b6b37ad2106ce2773b29eef6ec-Level0.scn
+res://Levels/LevelSelection.tscn::962f991f339bf509378d254a8f6f67ed::1728064297::res://.godot/exported/133200997/export-d7637d8fd3312084e0ae11e667a64542-LevelSelection.scn
+res://Levels/StyleBlack.tres::35018e8dfba16bbb5d3bc84747ca7c98::1727532981::res://.godot/exported/133200997/export-95b025ae7565b114fb0b663cf261dd96-StyleBlack.res
+res://Levels/StyleWhite.tres::ea56de802bbe8f0d149f08bd39797bfe::1727532981::res://.godot/exported/133200997/export-7fff284b6383e48df9c12bd604ae11f8-StyleWhite.res
+res://Pause/button_design.tres::92c072e09892f4259b10506dd3b5e719::1727532981::res://.godot/exported/133200997/export-bce3d0d2c5171a1ccaa8acc8119bae08-button_design.res
+res://Pause/pause_menu.tscn::937515ba835d2d08a6f922cb263f332e::1728064297::res://.godot/exported/133200997/export-d7bed13da6100c3a9f38f58ba83308bf-pause_menu.scn
+res://default_bus_layout.tres::f5cf22aff868fc798d7ee442f94cc5c6::1727532981::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://menu.tscn::c8f1f0bd0c7f8bb87c212ed10ca3ceb2::1728064297::res://.godot/exported/133200997/export-a4951207776b25ee5c8b2b05c1463587-menu.scn

@@ -1,3 +1,5 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+	$FullscreenButton.pressed = Global.is_fullscreen
+	if Global.is_fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		resolution_dropdown.disabled = true 
+		resolution_dropdown.tesxt="Fullscreen"

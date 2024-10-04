@@ -1,0 +1,9 @@
+res://menu.tscn
+res://Levels/LevelSelection.tscn
+res://Pause/pause_menu.tscn
+res://Character/character_body.tscn
+res://Levels/Level0.tscn
+res://Character/character_body.gd
+res://Levels/level_0.gd
+res://Global/global.gd
+res://Dokumentálás/ChangeLog.txt
