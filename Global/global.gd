@@ -8,3 +8,4 @@ var checkpoint
 var dash_avalible
 var dash_unavalible
 var hp = 3
+var hud

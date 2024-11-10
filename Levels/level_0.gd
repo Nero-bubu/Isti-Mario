@@ -8,6 +8,10 @@ func _ready() -> void:
 	Global.dash_avalible = $CanvasLayer/Hud/Dash_Avalible # Dash elérhetősége
 	Global.dash_unavalible = $CanvasLayer/Hud/Dash_Unavalible # Dash elérhetősége
 	Global.hp = 3
+	Global.hud = $CanvasLayer/Hud
+	$CanvasLayer/Hud.hide()
+	pauseMenu()
+	pause_menu.hide()
 var original_text = ""  # ResolutionDropdown szöveg backup
 @onready var pause_menu = $CanvasLayer/PauseMenu
 var paused = false
@@ -24,12 +28,12 @@ func _process(delta: float) -> void:  # Folyamatosan figyelt változások
 	if Global.hp < 1:
 		$CanvasLayer/Hud/Hp_0.hide()
 func pauseMenu(): #Pause menü
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-		$CanvasLayer/Hud.show()
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-		$CanvasLayer/Hud.hide()
-	paused = !paused
+		if paused:
+			pause_menu.hide()
+			Engine.time_scale = 1
+			Global.hud.show()
+		else:
+			pause_menu.show()
+			Engine.time_scale = 0
+			Global.hud.hide()
+		paused = !paused

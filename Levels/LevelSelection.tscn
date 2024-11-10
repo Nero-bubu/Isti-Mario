@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://byfyqghktnie4"]
 
-[ext_resource type="Texture2D" uid="uid://dqpmj46h01asv" path="res://Background/LevelSelection1.jpg" id="1_gd0nn"]
 [ext_resource type="Script" path="res://Levels/level_selection.gd" id="1_on538"]
+[ext_resource type="Texture2D" uid="uid://cw85fuadesk88" path="res://Background/busanyakonváglak.png" id="2_8j4wt"]
 [ext_resource type="StyleBox" uid="uid://mpw4rykcgco2" path="res://Levels/StyleWhite.tres" id="2_uftxb"]
 [ext_resource type="StyleBox" uid="uid://dgckbf5bx8f8l" path="res://Levels/StyleBlack.tres" id="3_agdt0"]
 [ext_resource type="Texture2D" uid="uid://3c3mu7pdi4ay" path="res://Background/LevelSelection2.jpg" id="4_g4q0j"]
@@ -136,7 +136,7 @@ offset_bottom = 360.0
 
 [node name="TextureRect" type="TextureRect" parent="FirstLevel"]
 layout_mode = 2
-texture = ExtResource("1_gd0nn")
+texture = ExtResource("2_8j4wt")
 expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="FirstLevel"]

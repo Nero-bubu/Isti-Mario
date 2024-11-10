@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdbmutw45gjvn"]
+
+[ext_resource type="Texture2D" uid="uid://cnf1ngmpa5p3s" path="res://Icons/Hp_icon.png" id="1_kfkiy"]
+[ext_resource type="Script" path="res://Levels/tutorial.gd" id="1_t4avx"]
+[ext_resource type="Texture2D" uid="uid://bvl3ird8547ho" path="res://Icons/Dash_avalible_1.png" id="2_n2360"]
+[ext_resource type="Texture2D" uid="uid://dnongy1adpcjf" path="res://Icons/Dash_unavalible_1.png" id="3_i68ym"]
+[ext_resource type="Texture2D" uid="uid://bf4sht2f8i7au" path="res://Icons/a.png" id="4_bcsc6"]
+[ext_resource type="Texture2D" uid="uid://r8j81pf04m0r" path="res://Icons/D.png" id="5_y1ljh"]
+[ext_resource type="Texture2D" uid="uid://bonnnb5fbtvb" path="res://Icons/shift.png" id="6_6gqto"]
+[ext_resource type="Texture2D" uid="uid://bcu5gbu81gqyo" path="res://Icons/nyilak.png" id="7_q0dle"]
+[ext_resource type="Texture2D" uid="uid://b4bynh4qme7we" path="res://Icons/ctrl.png" id="8_47rmy"]
+[ext_resource type="Texture2D" uid="uid://bkopnb3baxdxm" path="res://Icons/esc.png" id="9_i0r5e"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4avx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.760784)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.141
+offset_top = 224.0
+offset_right = 1259.52
+offset_bottom = 133.48
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.141
+offset_top = 498.0
+offset_right = 1259.52
+offset_bottom = 407.48
+
+[node name="HpIcon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(882, 65)
+scale = Vector2(0.041, 0.041)
+texture = ExtResource("1_kfkiy")
+
+[node name="HpLabel" type="Label" parent="CanvasLayer"]
+offset_left = 944.0
+offset_top = 27.0
+offset_right = 1116.0
+offset_bottom = 102.0
+text = "Ezek az életeid:
+Ha elfogynak, újra
+kell kezdened a pályát"
+
+[node name="DashAvalible1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(420, 420)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_n2360")
+
+[node name="DashUnavalible1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(524, 420)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_i68ym")
+
+[node name="DashLabel" type="Label" parent="CanvasLayer"]
+offset_left = 592.0
+offset_top = 382.0
+offset_right = 799.0
+offset_bottom = 457.0
+text = "Ez az ikon jelzi a dash
+elérhetőségét: Akkor tudsz
+dashelni, ha az ikon zöld."
+
+[node name="A" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(61, 65)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_bcsc6")
+
+[node name="D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(123, 65)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_y1ljh")
+
+[node name="Space" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(125, 171)
+scale = Vector2(0.180556, 0.0287037)
+texture = ExtResource("5_y1ljh")
+
+[node name="MozgasLabel" type="Label" parent="CanvasLayer"]
+offset_left = 161.0
+offset_top = 42.0
+offset_right = 280.0
+offset_bottom = 89.0
+text = "Az A billentyűvel balra,
+a D-vel jobbra tudsz mozogni"
+
+[node name="UgrasLabel" type="Label" parent="CanvasLayer"]
+offset_left = 234.0
+offset_top = 145.0
+offset_right = 409.0
+offset_bottom = 194.0
+text = "A SPACE billentyűvel 
+tudsz ugrani"
+
+[node name="Shift" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(57, 285)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_6gqto")
+
+[node name="FutasLabel" type="Label" parent="CanvasLayer"]
+offset_left = 107.0
+offset_top = 258.0
+offset_right = 306.0
+offset_bottom = 307.0
+text = "A SHIFT billentyűvel tudsz
+futni, ha van staminád"
+
+[node name="Nyilak" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(492, 60)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_q0dle")
+
+[node name="NyilakLabel" type="Label" parent="CanvasLayer"]
+offset_left = 558.0
+offset_top = 34.0
+offset_right = 778.0
+offset_bottom = 83.0
+text = "A nyilakkal is kiválthatod
+az A/D és SPACE billentyűket"
+
+[node name="Ctrl" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(56, 409)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("8_47rmy")
+
+[node name="ControlLabel" type="Label" parent="CanvasLayer"]
+offset_left = 107.0
+offset_top = 384.0
+offset_right = 303.0
+offset_bottom = 433.0
+text = "A CTRL-al tudsz  dashelni,
+ha éppen elérhető"
+
+[node name="Esc" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(56, 567)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_i0r5e")
+
+[node name="EscLabel" type="Label" parent="CanvasLayer"]
+offset_left = 101.0
+offset_top = 544.0
+offset_right = 224.0
+offset_bottom = 591.0
+text = "Az ESC billentyűvel nyithatod meg a pause menüt.
+Ezt a képernyőt is ezzel a gombbal tűntetheted el."
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.141
+offset_top = 351.0
+offset_right = 1259.52
+offset_bottom = 260.48

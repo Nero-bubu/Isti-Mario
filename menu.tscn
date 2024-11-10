@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://iyuytxs28657"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_57rtf"]
-[ext_resource type="Texture2D" uid="uid://1lrrhrowal4s" path="res://Background/teszt_hatter.png" id="2_ki1no"]
+[ext_resource type="Texture2D" uid="uid://c8mrnyjgaeo2n" path="res://Background/nyiregy.png" id="2_pb8wk"]
 [ext_resource type="StyleBox" uid="uid://7js7837p6ihq" path="res://Pause/button_design.tres" id="3_4ohfx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifeoa"]
@@ -106,15 +106,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ki1no")
+texture = ExtResource("2_pb8wk")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 447.0
-offset_top = 78.0
-offset_right = 602.0
-offset_bottom = 138.0
+offset_left = 264.0
+offset_top = 23.0
+offset_right = 419.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "Isti Mario"
 horizontal_alignment = 1

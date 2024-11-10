@@ -13,6 +13,13 @@ var dash_speed = 5000.0  # Dash sebessége
 var last_dash_time = -dash_cooldown  # Kezdetben a dash elérhető
 var is_dashing = false
 var dash_timer = 0.0
+var max_stamina: float = 100.0
+var current_stamina = 100
+var stamina_depletion_rate: float = 10.0  # How much stamina is used per second
+var stamina_regen_rate: float = 5.0  # How much stamina is regained per second
+var can_regen: bool = true
+var running: bool = false
+var is_tired: bool = false  # True if stamina is 0
 
 func _physics_process(delta: float) -> void:	
 	if not is_on_floor():  # Gravitáció alkalmazása
@@ -42,8 +49,12 @@ func _physics_process(delta: float) -> void:
 				velocity.x = -dash_speed
 
 	if not is_dashing:   # Jobbra és balra mozgás, ha nem dash-el
-		if Input.is_action_pressed("sprint"):  # Futás
+		if Input.is_action_pressed("sprint") and is_tired == false:  # Futás
 			speed = 1000  # Sebesség növelése ha nyomjuk a shiftet
+			use_stamina(delta)
+		else:
+				regen_stamina(delta)
+		check_if_tired()
 		if Input.is_action_pressed("move_right"):
 			velocity.x = speed
 		elif Input.is_action_pressed("move_left"):
@@ -53,7 +64,7 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():  # Ugrás
 		jump_count = 0
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or jump_count == 1):  # Ugrás és double jump
+	if Input.is_action_just_pressed("jump") and (is_on_floor()  or jump_count == 1):  # Ugrás és double jump
 		velocity.y = -jump_force  # Ugrás alkalmazása
 		jump_count += 1  # Ugrások számolása
 
@@ -84,3 +95,45 @@ func _physics_process(delta: float) -> void:
 
 	else:
 		speed = 500  # Sebesség alapra állítása
+
+#stamina
+
+ 
+# Function to update stamina
+
+
+ 
+# Function to handle stamina depletion (e.g. when running)
+func use_stamina(delta: float):
+	if current_stamina > 0:
+		current_stamina -= stamina_depletion_rate * delta
+		if current_stamina < 0:
+			current_stamina = 0
+	else:
+		is_tired = true  # If stamina runs out, set the player as tired
+		can_regen = false  # Disable regeneration while using stamina
+ 
+# Function to regenerate stamina
+func regen_stamina(delta: float):
+	if can_regen and current_stamina < max_stamina:
+		current_stamina += stamina_regen_rate * delta
+		if current_stamina > max_stamina:
+			current_stamina = max_stamina
+		is_tired = false  # Reset the tired state once stamina starts regenerating
+	# Enable stamina regen after a small delay when stopping running
+	if !running:
+		can_regen = true
+ 
+# Function to check if player is tired (stamina is zero)
+func check_if_tired():
+	if current_stamina <= 0:
+		is_tired = true
+		speed = 250
+		# For example, slow down movement speed, disable certain actions, etc.
+	else:
+		is_tired = false
+		speed = 500
+ 
+# Example: Function to toggle running
+func set_running(value: bool):
+	running = value

@@ -1,8 +1,9 @@
+ColorRect
+Label
+TextureRect
 Control
 TouchScreenButton
 Timer
 Sprite2D
-Label
 Polygon2D
-ColorRect
 MarginContainer
